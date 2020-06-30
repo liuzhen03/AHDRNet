@@ -1,0 +1,10 @@
+CMD: python train.py
+
+HPARAMS:
+  lr: [0.0001]
+  batch_size: [4]
+  loss_func: [0]
+  model_arch: [0]
+  init_weights: ['True']
+  epoch: [2000]
+  logdir: LOGDIR
