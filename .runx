@@ -1,0 +1,17 @@
+LOGROOT: /data/log/ahdrnet
+FARM: smallfarm
+
+smallfarm:
+  SUBMIT_CMD: 'rlaunch'
+  RESOURCES:
+    gpu: 1
+    cpu: 8
+    memory: 20000
+
+bigfarm:
+  SUBMIT_CMD: 'rlaunch'
+  RESOURCES:  
+    gpu: 2
+    cpu: 16
+    memory: 20000
+
