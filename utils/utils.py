@@ -58,6 +58,12 @@ def range_compressor(x):
     return (np.log(1 + 5000 * x)) / np.log(1 + 5000)
 
 
+def range_compressor_tensor(x):
+    const_1 = torch.from_numpy(np.array(1.0)).cuda()
+    const_5000 = torch.from_numpy(np.array(5000.0)).cuda()
+    return (torch.log(const_1 + const_5000 * x)) / torch.log(const_1 + const_5000)
+
+
 def psnr(x, target):
     sqrdErr = np.mean((x - target) ** 2)
     return 10 * log10(1/sqrdErr)

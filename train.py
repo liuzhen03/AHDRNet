@@ -83,8 +83,8 @@ def train(args, model, device, train_loader, optimizer, epoch, criterion):
         label = batch_data['label'].to(device)
 
         pred = model(batch_ldr0, batch_ldr1, batch_ldr2)
+        pred = range_compressor_tensor(pred)
         pred = torch.clamp(pred, 0., 1.)
-
         loss = criterion(pred, label)
         psnr = batch_PSNR(pred, label, 1.0)
         # psnr = batch_PSNR(torch.clamp(pred, 0., 1.), label, 1.0)
@@ -130,6 +130,7 @@ def validation(args, model, device, val_loader, optimizer, epoch, criterion):
 
         with torch.no_grad():
             pred = model(batch_ldr0, batch_ldr1, batch_ldr2)
+            pred = range_compressor_tensor(pred)
             pred = torch.clamp(pred, 0., 1.)
 
         loss = criterion(pred, label)
@@ -203,7 +204,7 @@ def main():
     if args.model_arch == 0:
         model = AHDRNet()
     elif args.model_arch == 1:
-        model = AHDR(6, 3, 64, 32)
+        model = AHDR(6, 5, 64, 32)
     else:
         logx.msg("This model is not yet implemented!\n")
         return

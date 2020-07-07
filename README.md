@@ -1,11 +1,11 @@
 # AHDRNet
-This repository is a PyTorch implementation of CVPR 2019 "Attention-guided Network for Ghost-free High Dynamic Range Imaging" (AHDRNet)
+This repository is a PyTorch implementation of CVPR 2019 "Attention-guided Network for Ghost-free High Dynamic Range Imaging"  ![AHDRNet](https://github.com/qingsenyangit/AHDRNet)
 
 ## Results
 Todo
 
 ## Prerequisites
-This codebase was developed and tested with pytorch 1.3 and Python 3.6.
+This codebase was developed and tested with pytorch 1.1.1 and Python 3.6.9
 
 
 * [runx](https://github.com/Pea-Shooter/runx) for experiments management (you should install `runx` via source code)
@@ -13,7 +13,8 @@ This codebase was developed and tested with pytorch 1.3 and Python 3.6.
 
 ## Training
 ### Data
-*HDR_Dynamic_Scenes_SIGGRAPH2017*
+* ![HDR_Dynamic_Scenes_SIGGRAPH2017](https://cseweb.ucsd.edu/~viscomp/projects/SIG17HDR/) which includes 74 samples for training and 15 samples for testing.
+
 
 
 ### Training
